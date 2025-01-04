@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:food_recipes_app_with_api/screen/home_screen.dart';
+import 'package:food_recipes_app_with_api/screen/splash_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -18,7 +19,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: HomeScreen()
+      home: SplashScreen()
     );
   }
 }
@@ -39,5 +40,14 @@ class MyApp extends StatelessWidget {
 /// Hit API And display Data =>
 ///
 /// Step 5
-/// Details Screen Create =>
+/// Details Screen Create => done
+///
+/// Step 6
+/// Create Splash Screen => DONE
+///
+/// Step 7
+/// In Loading animation , we show Lottie Animation => DONE
+///
+/// ________________PROJECT Complete_________________________///
+/// FINAL TEST
 

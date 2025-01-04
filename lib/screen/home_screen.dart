@@ -3,7 +3,9 @@ import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:food_recipes_app_with_api/domain/custom_text_style.dart';
+import 'package:food_recipes_app_with_api/screen/recipes_details_screen.dart';
 import 'package:http/http.dart' as http;
+import 'package:lottie/lottie.dart';
 
 import '../model/recipes_model.dart';
 
@@ -30,6 +32,14 @@ class _HomeScreenState extends State<HomeScreen> {
           style:
               myTextStyle18(textFamily: "secondary", textColor: Colors.white),
         ),
+        leading: Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Image.asset("assets/icons/recipe-book.png"),
+        ),
+        actions: const [
+          Icon(Icons.notifications , size: 30,) ,
+          SizedBox(width: 8,)
+        ],
         centerTitle: true,
         shadowColor: Colors.black,
         elevation: 11,
@@ -61,8 +71,8 @@ class _HomeScreenState extends State<HomeScreen> {
                   future: hitRecipesApi(),
                   builder: (context, snapshot) {
                     if (snapshot.connectionState == ConnectionState.waiting) {
-                      return const Center(
-                        child: CircularProgressIndicator(),
+                      return  Center(
+                        child: Lottie.asset("assets/images/loading.json"),
                       );
                     } else if (snapshot.hasError) {
                       return Center(
@@ -108,6 +118,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                   /// name
                                   Text(
                                     "${myRecipes[index].name}",
+                                    maxLines: 1,
                                     style: myTextStyle12(
                                         textColor: Colors.blueAccent,
                                         textWeight: FontWeight.bold),
@@ -140,9 +151,33 @@ class _HomeScreenState extends State<HomeScreen> {
                                     mainAxisAlignment:
                                         MainAxisAlignment.spaceBetween,
                                     children: [
+                                      ///_________________VIEW BUTTON_________________///
                                       /// when click on this button Navigate to the Details Screen
                                       ElevatedButton(
-                                          onPressed: () {},
+                                          onPressed: () {
+                                            Navigator.push(
+                                                context,
+                                                MaterialPageRoute(
+                                                    builder: (context) =>
+                                                        RecipesDetailsScreen(
+                                                            imageSrc: myRecipes[
+                                                                    index]
+                                                                .image
+                                                                .toString(),
+                                                          title: myRecipes[index].name.toString(),
+                                                          calories:myRecipes[index].caloriesPerServing.toString() ,
+                                                          cookTime:myRecipes[index].cookTimeMinutes.toString() ,
+                                                          difficultLevel:myRecipes[index].difficulty.toString() ,
+                                                          foodType:myRecipes[index].mealType.toString() ,
+                                                          prepTime:myRecipes[index].prepTimeMinutes.toString() ,
+                                                          rating:myRecipes[index].rating.toString() ,
+                                                          revCount:myRecipes[index].reviewCount.toString() ,
+                                                          cuisine: myRecipes[index].cuisine.toString(),
+                                                          ingredientsList: myRecipes[index].ingredients ?? [],
+                                                          instructionsList: myRecipes[index].instructions ?? [],
+
+                                                        )));
+                                          },
                                           style: ElevatedButton.styleFrom(
                                               shape: RoundedRectangleBorder(
                                                   borderRadius:
@@ -200,3 +235,4 @@ class _HomeScreenState extends State<HomeScreen> {
 /// data reflect data on the screen
 /// Complete
 /// Check
+/// back button also work on real device
