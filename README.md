@@ -7,10 +7,14 @@ A new Flutter project.
 This project is a starting point for a Flutter application.
 
 A few resources to get you started if this is your first Flutter project:
+<div>
+  <img src = "https://github.com/rahulkumardev24/Food-Recipes-App-with-Api-/blob/master/Screenshot_20250104_232935.png"  height = 500 />
+  <img src ="https://github.com/rahulkumardev24/Food-Recipes-App-with-Api-/blob/master/Screenshot_20250104_232920.png"   height = 500 />
+    <img src ="https://github.com/rahulkumardev24/Food-Recipes-App-with-Api-/blob/master/Screenshot_20250104_233002.png" height = 500 />
+        <img src ="https://github.com/rahulkumardev24/Food-Recipes-App-with-Api-/blob/master/Screenshot_20250104_233052.png" height = 500 />
+         <img src ="https://github.com/rahulkumardev24/Food-Recipes-App-with-Api-/blob/master/Screenshot_20250104_233119.png" height = 500 />
+          <img src ="https://github.com/rahulkumardev24/Food-Recipes-App-with-Api-/blob/master/Screenshot_20250104_233135.png" height = 500 />
+           <img src ="https://github.com/rahulkumardev24/Food-Recipes-App-with-Api-/blob/master/Screenshot_20250104_233155.png" height = 500 />
+            
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+</div>
